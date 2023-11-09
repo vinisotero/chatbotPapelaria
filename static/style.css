@@ -1,0 +1,160 @@
+/* Estilos gerais da página */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    justify-content: center; /* Centraliza horizontalmente no corpo da página */
+    align-items: center; /* Centraliza verticalmente no corpo da página */
+}
+
+.fundo{
+    width: 100%;
+    height: 100%;
+}
+.conteudo{
+    width: 100%;
+    height: 100%;
+}
+
+
+header {
+    background-color: #08A298;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    width: 100%;
+    position: fixed;
+}
+
+
+h1 {
+    font-size: 24px;
+    margin: 0 auto; /* Centraliza o h1 horizontalmente */
+}
+
+/* Estilos do menu lateral */
+#menuToggle {
+    display: none;
+}
+
+.menu-label {
+    cursor: pointer;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+}
+
+.bar {
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    margin: 5px 0;
+    transition: 0.4s;
+}
+
+#menuToggle:checked + header .bar:nth-child(1) {
+    transform: rotate(-45deg) translate(-5px, 6px);
+}
+
+#menuToggle:checked + header .bar:nth-child(2) {
+    opacity: 0;
+}
+
+#menuToggle:checked + header .bar:nth-child(3) {
+    transform: rotate(45deg) translate(-5px, -6px);
+}
+
+#sidebar {
+    width: 250px;
+    height: 100%;
+    background-color: #08A298;
+    position: fixed;
+    top: 50px; /* Defina a altura do header aqui */
+    left: -250px;
+    padding-top: 50px;
+    transition: 0.4s;
+    z-index: 1;
+}
+
+#menuToggle:checked + header + #sidebar {
+    left: 0;
+    z-index: 3; /* Quando o menu estiver aberto, defina um z-index maior para garantir que ele fique sobreposto */
+}
+
+#sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+
+#sidebar ul li {
+    margin-bottom: 40px;
+}
+
+#sidebar ul li a {
+    color: white;
+    text-decoration: none;
+    display: block;
+    font-size: 18px;
+    padding-left: 30px;
+
+}
+
+/* Altera a cor do texto ao passar o mouse */
+#sidebar ul li a:hover {
+    color: #08A298; /* Altere para a cor desejada ao passar o mouse */
+    background-color: #f2f2f2;
+    padding: 20px;
+    font-size: 15px;
+
+}
+
+.container {
+    text-align: center;
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    padding: 20px;
+    position: fixed;
+    top: 50%; /* Posiciona a partir do topo 50% da altura da janela */
+    left: 50%; /* Posiciona a partir da esquerda 50% da largura da janela */
+    transform: translate(-50%, -50%); /* Centraliza vertical e horizontalmente */
+    width: 50%;
+    height: 50%;
+}
+
+.item{
+    margin-top: 10px;
+}
+
+.lista{
+    margin-top: 40px;
+}
+
+.form_adicionar{
+    margin-top: 40px;
+}
+
+.item-list {
+    border: 1px solid #ccc;
+    padding: 10px;
+    max-height: 150px;
+    overflow-y: auto;
+}
+
+button {
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+button:disabled {
+    cursor: not-allowed;
+}
+
+.pagination{
+    margin-top: 20px;
+}
+
+
+
+

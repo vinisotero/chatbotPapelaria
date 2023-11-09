@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="tela-toda">
+        <input type="checkbox" id="menuToggle" class="menu-toggle">
+        <header>
+            <label for="menuToggle" class="menu-label">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </label>
+            <h1>Setor de Compras</h1>
+        </header>
+        <nav id="sidebar">
+            <ul>
+                <li><a href="{{ url_for('pagina_inicial') }}">Página Inicial</a></li>
+                <li><a href="{{ url_for('atacado') }}">Atacado</a></li>
+                <li><a href="{{ url_for('varejo') }}">Varejo</a></li>
+                <li><a href="{{ url_for('setor_de_compras') }}">Setor de Compras</a></li>
+                <li><a href="{{ url_for('gerencia') }}">Gerência</a></li>
+                <li><a href="{{ url_for('sac') }}">SAC</a></li>
+            </ul>
+        </nav>
+        </div>
+        <div class="container">
+            <h1>Adicionar</h1>
+                <form method="POST" class="form_adicionar">
+                    <label for="texto">Nome</label>
+                    <input type="text" name="texto" id="texto" maxlength="25" required>
+                    <br><br>
+                    <label for="telefone">Telefone:</label>
+                    <input type="tel" name="telefone" id="telefone" ui-mask="(99)9?9999-9999" placeholder="8199999999" required>
+                    <br><br>
+                    <input type="submit" value="Enviar">
+                </form>
+    </body>
+</html>

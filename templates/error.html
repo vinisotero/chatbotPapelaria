@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="tela-toda">
+        <input type="checkbox" id="menuToggle" class="menu-toggle">
+        <header>
+            <label for="menuToggle" class="menu-label">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </label>
+            <h1>SAC</h1>
+        </header>
+        <nav id="sidebar">
+            <ul>
+                <li><a href="{{ url_for('pagina_inicial') }}">Página Inicial</a></li>
+                <li><a href="{{ url_for('atacado') }}">Atacado</a></li>
+                <li><a href="{{ url_for('varejo') }}">Varejo</a></li>
+                <li><a href="{{ url_for('setor_de_compras') }}">Setor de Compras</a></li>
+                <li><a href="{{ url_for('gerencia') }}">Gerência</a></li>
+                <li><a href="{{ url_for('sac') }}">SAC</a></li>
+            </ul>
+        </nav>
+        </div>
+        <div class="container">
+            <h1 style="color: red;">ERRO</h1>
+            <h2>Atendente não cadastrado, já existe um atendente com mesmo nome ou número.</h2>
+            <button onclick="voltar()" style="margin-top: 40px;">Voltar para o Menu Inicial</button>
+    </body>
+    <script>
+         var voltar = function(){
+                setTimeout(function() {
+                    window.location.href = "/";
+                }, 100);
+            }
+    </script>
+</html>
